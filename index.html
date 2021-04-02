@@ -1,0 +1,181 @@
+<html lang="en" ng-app="phonebook">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+     
+        <title>Phone Book</title>
+     
+    <style>
+        body {
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #333;
+        background-color: #fff;
+        margin: 0;
+    }
+     
+     
+    .panel {
+        margin-bottom: 20px;
+        background-color: #fff;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        -webkit-box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
+        box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
+    }
+     
+    div {
+        display: block;
+    }
+     
+    .panel-info>.panel-heading {
+        color: #31708f;
+        background-color: #d9edf7;
+        border-color: #bce8f1;
+    }
+    .panel-heading {
+        padding: 10px 15px;
+        border-bottom: 1px solid transparent;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+     
+     
+    body {
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #333;
+        background-color: #fff;
+    }
+     
+    .table {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+     
+    table {
+        display: table;
+        border-collapse: separate;
+        box-sizing: border-box;
+        text-indent: initial;
+        border-spacing: 2px;
+        border-color: grey;
+    }
+     
+    .panel-body {
+        padding: 15px;
+    }
+     
+   
+    .form-inline .form-group {
+        display: inline-block;
+        margin-bottom: 0;
+        vertical-align: middle;
+    }
+     
+    .pagination {
+        display: inline-block;
+        padding-left: 0;
+        margin: 20px 0;
+        border-radius: 4px;
+    }
+     
+    .text-center {
+        text-align: center;
+    }
+     
+    .h3, h3 {
+        font-size: 24px;
+    }
+    .h1, .h2, .h3, h1, h2, h3 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+        font-family: inherit;
+        font-weight: 500;
+        line-height: 1.1;
+        color: inherit;
+    }
+     
+    .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9 {
+        float: left;
+    }
+     
+     
+    label {
+        display: inline-block;
+        max-width: 100%;
+        margin-bottom: 5px;
+        font-weight: 700;
+    }
+     
+     
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .add-contact-button
+    {
+
+    }
+     
+     
+    </style>
+</style>
+</head>
+ 
+<body ng-controller="appController">
+    <div class="container">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    <h3 class="text-center">Телефонен указател</h3>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="form-group has-info has-feedback">
+                    <label for="seacrh" class="col-sm-2 control-label">Търсене: </label>
+                    <div class="col-sm-5">
+                        <input type="text" name="search" ng-model="searchContact" class="form-control">
+                        <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                    </div>
+                    <div class="add-contact-button">
+                        <button class="btn btn-primary" ng-click="addContact()">
+                            <span class="glyphicon glyphicon-thumbs-up"></span>Добави контакт</button>
+                    </div>
+                </div>
+               
+            </div>
+            </form>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Име</th>
+                            <th>Телефонен номер</th>
+                            <th>E-mail</th>
+                            <th>Адрес</th>
+                            <th>Опции</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr> <!--ng-repeat="contact in info | limitTo:rowLimit| orderBy: 'name'| filter: search"-->
+                            <td>{{contact.name}}</td>
+                            <td>{{contact.phone}}</td>
+                            <td>{{contact.email}}</td>
+                            <td>{{contact.adress}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+ 
+</html>
